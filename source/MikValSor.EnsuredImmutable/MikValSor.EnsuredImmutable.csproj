@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
+    <RootNamespace>MikValSor.Runtime.Serialization</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Mikkel Valentin Sørensen</Authors>
+    <Company>Mikkel Valentin Sørensen</Company>
+    <Copyright>Mikkel Valentin Sørensen 2018</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor.EnsuredImmutable/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mikkelvalentinsorensen/MikValSor.EnsuredImmutable</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mikkelvalentinsorensen/MikValSor/master/icon/icon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/mikkelvalentinsorensen/MikValSor.EnsuredImmutable</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Immutable Ensured MikValSor</PackageTags>
+    <NeutralLanguage>English</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\Debug\netstandard2.0\MikValSor.Serialized.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\Release\netstandard2.0\MikValSor.Serialized.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\Debug\net45\MikValSor.Serialized.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\Release\net45\MikValSor.Serialized.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.8" />
+  </ItemGroup>
+
+</Project>
