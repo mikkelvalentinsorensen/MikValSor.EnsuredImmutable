@@ -7,8 +7,6 @@ namespace MikValSor.Immutable
 	/// </summary>
 	public abstract class EnsuredImmutable
 	{
-		private readonly static Lazy<ImmutableValidator> lazyImmutable = new Lazy<ImmutableValidator>(() => new ImmutableValidator());
-
 		internal EnsuredImmutable()
 		{
 		}
@@ -30,7 +28,7 @@ namespace MikValSor.Immutable
 		/// </exception>
 		public static EnsuredImmutable<T> Create<T>(T immutable)
 		{
-			lazyImmutable.Value.EnsureImmutable(immutable);
+			ImmutableValidator.Instance.EnsureImmutable(immutable);
 			return new EnsuredImmutable<T>(immutable);
 		}
 	}
