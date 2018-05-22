@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45;</TargetFrameworks>
-    <RootNamespace>MikValSor.Runtime.Serialization</RootNamespace>
+    <RootNamespace>MikValSor.Immutable</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Mikkel Valentin Sørensen</Authors>
@@ -15,10 +15,13 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Immutable Ensured MikValSor</PackageTags>
     <NeutralLanguage>English</NeutralLanguage>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <PackageReleaseNotes>v1.0.1
+    <PackageReleaseNotes>v1.0.2
+- Fixed missing documentation
+
+v1.0.1
 - Upgraded to v1.0.9 of ImmutableValidator and utilize its singleton.
 - Added EnsuredImmutableAndSerializable&lt;T&gt;
 
@@ -28,22 +31,22 @@ v1.0.0
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <LangVersion>latest</LangVersion>
-    <DocumentationFile>bin\Debug\netstandard2.0\MikValSor.Serialized.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard2.0\MikValSor.EnsuredImmutable.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <LangVersion>latest</LangVersion>
-    <DocumentationFile>bin\Release\netstandard2.0\MikValSor.Serialized.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\MikValSor.EnsuredImmutable.xml</DocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
     <LangVersion>latest</LangVersion>
-    <DocumentationFile>bin\Debug\net45\MikValSor.Serialized.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net45\MikValSor.EnsuredImmutable.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
     <LangVersion>latest</LangVersion>
-    <DocumentationFile>bin\Release\net45\MikValSor.Serialized.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net45\MikValSor.EnsuredImmutable.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
