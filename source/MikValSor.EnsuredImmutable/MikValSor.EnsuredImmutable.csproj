@@ -15,6 +15,15 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Immutable Ensured MikValSor</PackageTags>
     <NeutralLanguage>English</NeutralLanguage>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PackageReleaseNotes>v1.0.1
+- Upgraded to v1.0.9 of ImmutableValidator and utilize its singleton.
+- Added EnsuredImmutableAndSerializable&lt;T&gt;
+
+v1.0.0
+- Initial release</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -38,7 +47,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.8" />
+    <PackageReference Include="MikValSor.ImmutableValidator" Version="1.0.9" />
+    <PackageReference Include="MikValSor.SerializableValidator" Version="1.0.4" />
   </ItemGroup>
 
 </Project>
