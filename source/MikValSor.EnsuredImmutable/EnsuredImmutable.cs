@@ -77,6 +77,9 @@ namespace MikValSor.Immutable
 		/// <returns>
 		///		Returns EnsuredImmutableAndSerializable´1 with the Value.
 		/// </returns>
+		/// <exception cref="NotSerializableException">
+		///		throws MikValSor.Runtime.Serialization.NotSerializableException if type is not serializable.
+		/// </exception>
 		public EnsuredImmutableAndSerializable<T> EnsureSerializable()
 		{
 			var reply = this as EnsuredImmutableAndSerializable<T>;
