@@ -8,9 +8,23 @@ namespace MikValSor.Immutable
 	/// </summary>
 	public abstract class EnsuredImmutable
 	{
-		internal EnsuredImmutable()
+		internal EnsuredImmutable(object value, bool serializable)
 		{
+			this.value = value;
+			this.serializable = serializable;
 		}
+
+		/// <summary>
+		///		Indicate if value is serializable.
+		/// </summary>
+		public bool Serializable => serializable;
+		private readonly bool serializable;
+
+		/// <summary>
+		///		Value that is ensured immutable.
+		/// </summary>
+		public object Value => value;
+		private readonly object value;
 
 		/// <summary>
 		///		Validates object is immutable and encapsulated object in an MikValSor.Immutable.EnsuredImmutable´1.
@@ -47,17 +61,12 @@ namespace MikValSor.Immutable
 		/// <summary>
 		///		Value that is ensured immutable.
 		/// </summary>
-		public readonly T Value;
+		public new T Value => value;
+		private readonly T value;
 
-		/// <summary>
-		///		Indicate if value is serializable.
-		/// </summary>
-		public readonly bool Serializable;
-
-		internal EnsuredImmutable(T value, bool serializable = false)
+		internal EnsuredImmutable(T value, bool serializable = false) : base(value, serializable)
 		{
-			Value = value;
-			Serializable = serializable;
+			this.value = value;
 		}
 
 		/// <summary>
@@ -82,8 +91,7 @@ namespace MikValSor.Immutable
 		/// </exception>
 		public EnsuredImmutableAndSerializable<T> EnsureSerializable()
 		{
-			var reply = this as EnsuredImmutableAndSerializable<T>;
-			if (reply != null) return reply;
+			if (this is EnsuredImmutableAndSerializable<T> reply) return reply;
 
 			//Not serializable.
 			SerializableValidator.Instance.EnsureSerializable(Value);
